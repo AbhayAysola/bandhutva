@@ -16,7 +16,7 @@ export default function ScanQRScreen() {
       setHasPermission(granted);
     }
     if (hasPermission === null) getBarCodeScannerPermissions(); // Get the permissions if we've not gotten it yet
-  }, []);
+  }, [hasPermission]);
 
 
   const requestBarCodeScannerPermissions = async () => {

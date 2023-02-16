@@ -16,12 +16,10 @@ import SignInScreen from '../screens/SignInScreen';
 import DisplayQR from '../screens/DisplayQR';
 import ScanQR from '../screens/ScanQR';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
-import LinkingConfiguration from './LinkingConfiguration';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <NavigationContainer
-      linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <RootNavigator />
     </NavigationContainer>
@@ -65,7 +63,7 @@ function BottomTabNavigator() {
         component={DisplayQR}
         options={({ navigation }: RootTabScreenProps<'DisplayQR'>) => ({
           title: 'Display QR',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="mobile-phone" color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Sign In')}
@@ -87,7 +85,7 @@ function BottomTabNavigator() {
         component={ScanQR}
         options={{
           title: 'Scan QR',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="qrcode" color={color} />,
         }}
       />
     </BottomTab.Navigator>
