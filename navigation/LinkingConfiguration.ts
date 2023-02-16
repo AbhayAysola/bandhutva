@@ -9,25 +9,26 @@ import * as Linking from 'expo-linking';
 
 import { RootStackParamList } from '../types';
 
+// TODO: Setup proper linking configuration
 const linking: LinkingOptions<RootStackParamList> = {
   prefixes: [Linking.createURL('/')],
   config: {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          DisplayQR: {
             screens: {
-              TabOneScreen: 'one',
+              DisplayQRScreen: 'display',
             },
           },
-          TabTwo: {
+          ScanQR: {
             screens: {
-              TabTwoScreen: 'two',
+              ScanQRScreen: 'scan',
             },
           },
         },
       },
-      Modal: 'modal',
+      "Sign In": 'signin',
       NotFound: '*',
     },
   },
